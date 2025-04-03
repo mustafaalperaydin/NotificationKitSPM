@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Notification2CardView: View {
+public struct Notification2CardView: View {
     
     @Binding var notification2Dialog: Bool
     var notification2Model: NotificationModel2

@@ -140,7 +140,7 @@ public struct NotificationModel3: Codable, Hashable {
     
     public var Type1: Int? = -1
     public var style: String? = ""
-    public var notificationId: String? = ""
+    public var notificationId: Int? = -1
     public var mxRouteId: Int? = -1
     public var mxBlockId: Int? = -1
     public var pointId: Int? = -1
@@ -169,7 +169,7 @@ public struct NotificationModel3: Codable, Hashable {
 
     public init() { }
     
-    public init(Type1: Int?, style: String?, notificationId: String?, mxRouteId: Int?, mxBlockId: Int?, pointId: Int?, title: String?, body: String?, imageUrl: String?, videoUrl: String?, lottieName: String?, gifUrl: String?, actionBtnText: String?, textField: String?, cardBgColor: String?, cardRadius: Int?, headerBgColor: String?, titleColor: String?, bodyColor: String?, closeBtnColor: String?, actionBtnBgColor: String?, actionBtnTextColor: String?, headerPadding: Int?, dialogMarginVertical: Int?, dialogMarginHorizontal: Int?, sound: String?, vibrate: Int?, clickAction: String?) {
+    public init(Type1: Int?, style: String?, notificationId: Int?, mxRouteId: Int?, mxBlockId: Int?, pointId: Int?, title: String?, body: String?, imageUrl: String?, videoUrl: String?, lottieName: String?, gifUrl: String?, actionBtnText: String?, textField: String?, cardBgColor: String?, cardRadius: Int?, headerBgColor: String?, titleColor: String?, bodyColor: String?, closeBtnColor: String?, actionBtnBgColor: String?, actionBtnTextColor: String?, headerPadding: Int?, dialogMarginVertical: Int?, dialogMarginHorizontal: Int?, sound: String?, vibrate: Int?, clickAction: String?) {
         
         self.Type1 = Type1
         self.style = style

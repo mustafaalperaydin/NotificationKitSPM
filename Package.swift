@@ -12,10 +12,15 @@ let package = Package(
             name: "NotificationKitSPM",
             targets: ["NotificationKitSPM"]),
     ],
+    dependencies: [
+        // Lottie kütüphanesini ekliyoruz
+        .package(url: "https://github.com/airbnb/lottie-ios.git", from: "4.5.0")
+    ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "NotificationKitSPM"),
+            name: "NotificationKitSPM",
+            dependencies: ["Lottie"])  // Lottie bağımlılığını buraya ekledik
     ]
 )

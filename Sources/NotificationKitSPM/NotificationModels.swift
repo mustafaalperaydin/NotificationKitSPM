@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct NotificationModel4 : Codable, Hashable{
+public struct NotificationModel4 : Codable, Hashable, NotificationModelProtocol {
     
     public var Type1: Int? = -1
     public var style: String? = ""
@@ -81,7 +81,7 @@ public struct NotificationModel4 : Codable, Hashable{
     }
 }
 
-public struct NotificationModel2: Codable, Hashable {
+public struct NotificationModel2: Codable, Hashable, NotificationModelProtocol {
     
     public var Type1: Int? = -1
     public var style: String? = ""
@@ -136,7 +136,7 @@ public struct NotificationModel2: Codable, Hashable {
     }
 }
 
-public struct NotificationModel3: Codable, Hashable {
+public struct NotificationModel3: Codable, Hashable, NotificationModelProtocol {
     
     public var Type1: Int? = -1
     public var style: String? = ""

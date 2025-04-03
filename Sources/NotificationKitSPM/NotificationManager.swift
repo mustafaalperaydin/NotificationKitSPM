@@ -8,6 +8,17 @@
 import Foundation
 import UserNotifications
 
+protocol NotificationModelProtocol {
+    var style: String? { get }
+}
+
+enum NotificationType {
+    case template4(NotificationModel4)
+    case template3(NotificationModel3)
+    case template2(NotificationModel2)
+    case defaultModel(NotificationResponseModel)
+}
+
 public class NotificationManager {
     public static let shared = NotificationManager()
     
@@ -18,7 +29,41 @@ public class NotificationManager {
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
             completion(granted, error)
-            //test test test
+        }
+    }
+    
+    func parseNotification(userInfo: [AnyHashable: Any]) -> NotificationType? {
+        guard let jsonData = try? JSONSerialization.data(withJSONObject: userInfo, options: []) else {
+            return nil
+        }
+        
+        if let style = userInfo["style"] as? String {
+            switch style {
+            case "Template4":
+                if let notification = try? JSONDecoder().decode(NotificationModel4.self, from: jsonData) {
+                    return .template4(notification)
+                }
+            case "Template3":
+                if let notification = try? JSONDecoder().decode(NotificationModel3.self, from: jsonData) {
+                    return .template3(notification)
+                }
+            case "Template2":
+                if let notification = try? JSONDecoder().decode(NotificationModel2.self, from: jsonData) {
+                    return .template2(notification)
+                }
+            default:
+                return parseDefaultNotification(jsonData)
+            }
+        } else {
+            return parseDefaultNotification(jsonData)
+        }
+    }
+    
+    func parseDefaultNotification(_ jsonData: Data) -> NotificationType {
+        if let notification = try? JSONDecoder().decode(NotificationModelDefault.self, from: jsonData) {
+            return .defaultModel(notification)
+        } else {
+            return .defaultModel(NotificationModelDefault()) // Varsayılan boş model
         }
     }
     

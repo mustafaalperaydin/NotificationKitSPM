@@ -87,6 +87,10 @@ public struct Notification2CardView: View {
                 {
                     Spacer()
                 }
+            }.onAppear {
+                if notification2Model.sound != "" {
+                    playSound(sound: notification2Model.sound!, type: "wav")
+                }
             }
             
         }

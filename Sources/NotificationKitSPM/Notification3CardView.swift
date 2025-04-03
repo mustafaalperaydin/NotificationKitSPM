@@ -79,6 +79,11 @@ public struct Notification3CardView: View {
                 .background(notification3Model.cardBgColor == "" ? .white : Color.init(hex1: notification3Model.cardBgColor!))
                 .cornerRadius(CGFloat(notification3Model.cardRadius == -1 ? 10 : notification3Model.cardRadius!))
                 .padding(10)
+                .onAppear {
+                    if notification3Model.sound != "" {
+                        playSound(sound: notification3Model.sound!, type: "wav")
+                    }
+                }
                 
         }
     }

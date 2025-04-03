@@ -13,7 +13,12 @@ public struct Notification2CardView: View {
     @Binding var notification2Dialog: Bool
     var notification2Model: NotificationModel2
     
-    var body: some View {
+    public init(notification2Dialog: Binding<Bool>, notification2Model: NotificationModel2) {
+        self.notification2Dialog = notification2Dialog
+        self.notification2Model = notification2Model
+    }
+    
+    public var body: some View {
         ZStack {
             VStack {
                 if notification2Model.location! == "CENTER" || notification2Model.location! == "BOTTOM"

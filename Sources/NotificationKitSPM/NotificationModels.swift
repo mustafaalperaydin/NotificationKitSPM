@@ -7,6 +7,8 @@
 
 import Foundation
 
+//test
+
 public struct NotificationModel4 : Codable, Hashable, NotificationModelProtocol {
     
     public var Type1: Int? = -1

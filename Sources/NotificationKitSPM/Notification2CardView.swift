@@ -36,7 +36,7 @@ public struct Notification2CardView: View {
                         Image(systemName: "checkmark.circle.fill")
                             .resizable()
                             .frame(width: 20, height: 20)
-                            .foregroundStyle(notification2Model.closeBtnColor == "" ? .green : Color.init(hex1: notification2Model.closeBtnColor!))
+                            .foregroundColor(notification2Model.closeBtnColor == "" ? .green : Color.init(hex1: notification2Model.closeBtnColor!))
                             .padding(.horizontal, 5)
                     } else {
                         AsyncImageView(url: URL(string: notification2Model.startImageUrl!)!)
@@ -46,13 +46,13 @@ public struct Notification2CardView: View {
                     
                     VStack(spacing: 5) {
                         Text(notification2Model.title ?? "")
-                            .foregroundStyle(notification2Model.titleColor == "" ? .black : Color.init(hex1: notification2Model.titleColor!))
+                            .foregroundColor(notification2Model.titleColor == "" ? .black : Color.init(hex1: notification2Model.titleColor!))
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .font(.headline)
                             .font(.system(size: 24))
                         
                         Text(notification2Model.body ?? "")
-                            .foregroundStyle(notification2Model.bodyColor == "" ? .black : Color.init(hex1: notification2Model.bodyColor!))
+                            .foregroundColor(notification2Model.bodyColor == "" ? .black : Color.init(hex1: notification2Model.bodyColor!))
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .font(.callout)
                             .font(.system(size: 14))
@@ -69,7 +69,7 @@ public struct Notification2CardView: View {
                             Image(systemName: "xmark.circle.fill")
                                 .resizable()
                                 .frame(width: 20, height: 20)
-                                .foregroundStyle(notification2Model.closeBtnColor == "" ? .black : Color.init(hex1: notification2Model.closeBtnColor!))
+                                .foregroundColor(notification2Model.closeBtnColor == "" ? .black : Color.init(hex1: notification2Model.closeBtnColor!))
                                 .padding(.horizontal, 5)
                         } else {
                             AsyncImageView(url: URL(string: notification2Model.startImageUrl!)!)

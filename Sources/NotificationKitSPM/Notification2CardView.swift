@@ -14,7 +14,7 @@ public struct Notification2CardView: View {
     var notification2Model: NotificationModel2
     
     public init(notification2Dialog: Binding<Bool>, notification2Model: NotificationModel2) {
-        self.notification2Dialog = notification2Dialog
+        self._notification2Dialog = notification2Dialog
         self.notification2Model = notification2Model
     }
     
@@ -80,7 +80,7 @@ public struct Notification2CardView: View {
                 }.frame(maxWidth: .infinity)
                     .frame(height: 80)
                     .background(notification2Model.cardBgColor == "" ? .white : Color.init(hex1: notification2Model.cardBgColor!))
-                    .customOverlayStyle(cornerRadius: 10, lineColor: .white)
+                    .cornerRadius(10)
                     .padding()
                 
                 if notification2Model.location! == "CENTER" || notification2Model.location! == "TOP"

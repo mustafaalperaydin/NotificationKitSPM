@@ -18,6 +18,7 @@ public class NotificationManager {
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
             completion(granted, error)
+            //test test test
         }
     }
     

@@ -60,10 +60,10 @@ public class NotificationManager {
     }
     
     func parseDefaultNotification(_ jsonData: Data) -> NotificationType {
-        if let notification = try? JSONDecoder().decode(NotificationModelDefault.self, from: jsonData) {
+        if let notification = try? JSONDecoder().decode(NotificationResponseModel.self, from: jsonData) {
             return .defaultModel(notification)
         } else {
-            return .defaultModel(NotificationModelDefault()) // Varsayılan boş model
+            return .defaultModel(NotificationResponseModel()) // Varsayılan boş model
         }
     }
     

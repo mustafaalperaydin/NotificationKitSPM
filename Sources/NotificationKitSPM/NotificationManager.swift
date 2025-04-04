@@ -108,4 +108,207 @@ public class NotificationManager {
         print("🍕notfModel - \(notfModel)")
         return notfModel
     }
+    
+    public func handleNotification2(userInfo: [AnyHashable: Any]) -> NotificationModel2? {
+        print("✅handleNewNotification")
+        var model = NotificationModel2()
+        print("🍀userInfo - \(userInfo)")
+        
+        for notf in userInfo {
+            print("⚠️notf - \(notf)")
+            switch notf.key.description {
+            case "Type":
+                model.Type1 = Int(notf.value as? String ?? "")
+            case "style":
+                model.style = notf.value as? String
+            case "mxRouteId":
+                model.mxRouteId = Int(notf.value as? String ?? "")
+            case "mxBlockId":
+                model.mxBlockId = Int(notf.value as? String ?? "")
+            case "pointId":
+                model.pointId = Int(notf.value as? String ?? "")
+            case "title":
+                model.title = notf.value as? String
+            case "body":
+                model.body = notf.value as? String
+            case "startImageUrl":
+                model.startImageUrl = notf.value as? String
+            case "closeImageUrl":
+                model.closeImageUrl = notf.value as? String
+            case "titleColor":
+                model.titleColor = notf.value as? String
+            case "bodyColor":
+                model.bodyColor = notf.value as? String
+            case "closeBtnColor":
+                model.closeBtnColor = notf.value as? String
+            case "cardBgColor":
+                model.cardBgColor = notf.value as? String
+            case "cardMarginVertical":
+                model.cardMarginVertical = Int(notf.value as? String ?? "")
+            case "cardMarginHorizontal":
+                model.cardMarginHorizontal = Int(notf.value as? String ?? "")
+            case "startLineColor":
+                model.startLineColor = notf.value as? String
+            case "sound":
+                model.sound = notf.value as? String
+            case "vibrate":
+                model.vibrate = Int(notf.value as? String ?? "")
+            case "clickAction":
+                model.clickAction = notf.value as? String
+            case "location":
+                model.location = notf.value as? String
+            default:
+                break
+            }
+        }
+
+        print("🍕model - \(model)")
+        return model
+    }
+    
+    public func handleNotification3(userInfo: [AnyHashable: Any]) -> NotificationModel3? {
+        print("✅handleAdvancedNotification")
+        var model = NotificationModel3()
+        print("🍀userInfo - \(userInfo)")
+        
+        for notf in userInfo {
+            print("⚠️notf - \(notf)")
+            switch notf.key.description {
+            case "Type":
+                model.Type1 = Int(notf.value as? String ?? "")
+            case "style":
+                model.style = notf.value as? String
+            case "notificationId":
+                model.notificationId = Int(notf.value as? String ?? "")
+            case "mxRouteId":
+                model.mxRouteId = Int(notf.value as? String ?? "")
+            case "mxBlockId":
+                model.mxBlockId = Int(notf.value as? String ?? "")
+            case "pointId":
+                model.pointId = Int(notf.value as? String ?? "")
+            case "title":
+                model.title = notf.value as? String
+            case "body":
+                model.body = notf.value as? String
+            case "imageUrl":
+                model.imageUrl = notf.value as? String
+            case "videoUrl":
+                model.videoUrl = notf.value as? String
+            case "lottieName":
+                model.lottieName = notf.value as? String
+            case "gifUrl":
+                model.gifUrl = notf.value as? String
+            case "actionBtnText":
+                model.actionBtnText = notf.value as? String
+            case "textField":
+                model.textField = notf.value as? String
+            case "cardBgColor":
+                model.cardBgColor = notf.value as? String
+            case "cardRadius":
+                model.cardRadius = Int(notf.value as? String ?? "")
+            case "headerBgColor":
+                model.headerBgColor = notf.value as? String
+            case "titleColor":
+                model.titleColor = notf.value as? String
+            case "bodyColor":
+                model.bodyColor = notf.value as? String
+            case "closeBtnColor":
+                model.closeBtnColor = notf.value as? String
+            case "actionBtnBgColor":
+                model.actionBtnBgColor = notf.value as? String
+            case "actionBtnTextColor":
+                model.actionBtnTextColor = notf.value as? String
+            case "headerPadding":
+                model.headerPadding = Int(notf.value as? String ?? "")
+            case "dialogMarginVertical":
+                model.dialogMarginVertical = Int(notf.value as? String ?? "")
+            case "dialogMarginHorizontal":
+                model.dialogMarginHorizontal = Int(notf.value as? String ?? "")
+            case "sound":
+                model.sound = notf.value as? String
+            case "vibrate":
+                model.vibrate = Int(notf.value as? String ?? "")
+            case "clickAction":
+                model.clickAction = notf.value as? String
+            default:
+                break
+            }
+        }
+        
+        print("🍕model - \(model)")
+        return model
+    }
+    
+    public func handleNotification4(userInfo: [AnyHashable: Any]) -> NotificationModel4? {
+        print("✅handleUpdatedNotification")
+        var model = NotificationModel4()
+        print("🍀userInfo - \(userInfo)")
+        
+        for notf in userInfo {
+            print("⚠️notf - \(notf)")
+            switch notf.key.description {
+            case "Type":
+                model.Type1 = Int(notf.value as? String ?? "")
+            case "style":
+                model.style = notf.value as? String
+            case "notificationId":
+                model.notificationId = notf.value as? String
+            case "mxRouteId":
+                model.mxRouteId = Int(notf.value as? String ?? "")
+            case "mxBlockId":
+                model.mxBlockId = Int(notf.value as? String ?? "")
+            case "pointId":
+                model.pointId = Int(notf.value as? String ?? "")
+            case "title":
+                model.title = notf.value as? String
+            case "body":
+                model.body = notf.value as? String
+            case "lottieName":
+                model.lottieName = notf.value as? String
+            case "lottieSizeX":
+                model.lottieSizeX = Int(notf.value as? String ?? "")
+            case "lottieSizeY":
+                model.lottieSizeY = Int(notf.value as? String ?? "")
+            case "actionBtnText":
+                model.actionBtnText = notf.value as? String
+            case "textField":
+                model.textField = notf.value as? String
+            case "cardBgColor":
+                model.cardBgColor = notf.value as? String
+            case "cardRadius":
+                model.cardRadius = Int(notf.value as? String ?? "")
+            case "headerBgColor":
+                model.headerBgColor = notf.value as? String
+            case "titleColor":
+                model.titleColor = notf.value as? String
+            case "bodyColor":
+                model.bodyColor = notf.value as? String
+            case "closeBtnColor":
+                model.closeBtnColor = notf.value as? String
+            case "actionBtnBgColor":
+                model.actionBtnBgColor = notf.value as? String
+            case "actionBtnTextColor":
+                model.actionBtnTextColor = notf.value as? String
+            case "headerPadding":
+                model.headerPadding = Int(notf.value as? String ?? "")
+            case "location":
+                model.location = notf.value as? String
+            case "marginVertical":
+                model.marginVertical = Int(notf.value as? String ?? "")
+            case "marginHorizontal":
+                model.marginHorizontal = Int(notf.value as? String ?? "")
+            case "sound":
+                model.sound = notf.value as? String
+            case "vibrate":
+                model.vibrate = Int(notf.value as? String ?? "")
+            case "clickAction":
+                model.clickAction = notf.value as? String
+            default:
+                break
+            }
+        }
+        
+        print("🍕model - \(model)")
+        return model
+    }
 }

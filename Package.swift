@@ -16,14 +16,14 @@ let package = Package(
     ],
     dependencies: [
         // ✅ Lottie'nin daha küçük SPM versiyonunu kullanıyoruz
-        .package(url: "https://github.com/airbnb/lottie-spm.git", from: "4.5.0")
+        .package(url: "https://github.com/airbnb/lottie-ios.git", from: "4.5.1")
     ],
     targets: [
         .target(
             name: "NotificationKitSPM",
             dependencies: [
                 // ✅ product ve package ismi doğru yazılmış
-                .product(name: "Lottie", package: "lottie-spm")
+                .product(name: "Lottie", package: "lottie-ios")
             ]
         )
     ]

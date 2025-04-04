@@ -81,10 +81,9 @@ public struct Notification3CardView: View {
                 .padding(10)
                 .onAppear {
                     if notification3Model.sound != "" {
-                        playSound(sound: notification3Model.sound!, type: "wav")
+                        playSound(sound: notification3Model.sound!)
                     }
                 }
-                
         }
     }
 }

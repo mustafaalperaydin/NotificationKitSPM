@@ -64,7 +64,7 @@ public struct Notification4CardView: View {
                 }
             }.onAppear {
                 if notification4Model.sound != "" {
-                    playSound(sound: notification4Model.sound!, type: "wav")
+                    playSound(sound: notification4Model.sound!)
                 }
             }
                 
@@ -74,14 +74,23 @@ public struct Notification4CardView: View {
 
 var audioPlayer: AVAudioPlayer?
 
-func playSound(sound: String, type: String) {
+func playSound(sound: String) {
+    // Dosyanın uzantılarını içeren bir dizi
+    let fileExtensions = ["mp3", "wav", "m4a"]
     
-    if let path = Bundle.main.path(forResource: sound, ofType: type) {
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
-            audioPlayer?.play()
-        } catch {
-            
+    // Tüm uzantılarla dosyayı dene
+    for ext in fileExtensions {
+        if let path = Bundle.main.path(forResource: sound, ofType: ext) {
+            do {
+                let url = URL(fileURLWithPath: path)
+                audioPlayer = try AVAudioPlayer(contentsOf: url)
+                audioPlayer?.play()
+                return // Ses çaldıysa işlemi sonlandır
+            } catch {
+                print("Error playing sound: \(error)")
+            }
         }
     }
+    
+    print("Ses dosyası bulunamadı!")
 }

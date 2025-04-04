@@ -10,7 +10,7 @@ import SwiftUI
 import AVKit
 import Lottie
 
-public struct Notification3CardView: View {
+public struct Notification4CardView: View {
     
     @Binding var notification4Dialog: Bool
     var notification4Model: NotificationModel4

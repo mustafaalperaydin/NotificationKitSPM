@@ -8,11 +8,11 @@
 import Foundation
 import UserNotifications
 
-protocol NotificationModelProtocol {
+public protocol NotificationModelProtocol {
     var style: String? { get }
 }
 
-enum NotificationType {
+public enum NotificationType {
     case template4(NotificationModel4)
     case template3(NotificationModel3)
     case template2(NotificationModel2)
@@ -32,7 +32,7 @@ public class NotificationManager {
         }
     }
     
-    func parseNotification(userInfo: [AnyHashable: Any]) -> NotificationType? {
+    public func parseNotification(userInfo: [AnyHashable: Any]) -> NotificationType? {
         guard let jsonData = try? JSONSerialization.data(withJSONObject: userInfo, options: []) else {
             return nil
         }
@@ -59,7 +59,7 @@ public class NotificationManager {
         }
     }
     
-    func parseDefaultNotification(_ jsonData: Data) -> NotificationType {
+    public func parseDefaultNotification(_ jsonData: Data) -> NotificationType {
         if let notification = try? JSONDecoder().decode(NotificationResponseModel.self, from: jsonData) {
             return .defaultModel(notification)
         } else {

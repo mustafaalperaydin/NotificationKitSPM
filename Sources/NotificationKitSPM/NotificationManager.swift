@@ -42,14 +42,20 @@ public class NotificationManager {
             case "Template4":
                 if let notification = try? JSONDecoder().decode(NotificationModel4.self, from: jsonData) {
                     return .template4(notification)
+                } else {
+                    return parseDefaultNotification(jsonData)
                 }
             case "Template3":
                 if let notification = try? JSONDecoder().decode(NotificationModel3.self, from: jsonData) {
                     return .template3(notification)
+                } else {
+                    return parseDefaultNotification(jsonData)
                 }
             case "Template2":
                 if let notification = try? JSONDecoder().decode(NotificationModel2.self, from: jsonData) {
                     return .template2(notification)
+                } else {
+                    return parseDefaultNotification(jsonData)
                 }
             default:
                 return parseDefaultNotification(jsonData)
